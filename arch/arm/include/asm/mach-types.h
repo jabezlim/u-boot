@@ -200,6 +200,7 @@ extern unsigned int __machine_arch_type;
 #define MACH_TYPE_BALLOON3             1029
 #define MACH_TYPE_ECBAT91              1072
 #define MACH_TYPE_ONEARM               1075
+#define MACH_TYPE_SMDK2440             1080
 #define MACH_TYPE_SMDK2443             1084
 #define MACH_TYPE_FSG                  1091
 #define MACH_TYPE_AT91SAM9260EK        1099
@@ -1650,6 +1651,18 @@ extern unsigned int __machine_arch_type;
 # define machine_is_smdk2410()	(machine_arch_type == MACH_TYPE_SMDK2410)
 #else
 # define machine_is_smdk2410()	(0)
+#endif
+
+#ifdef CONFIG_ARCH_SMDK2440
+# ifdef machine_arch_type
+#  undef machine_arch_type
+#  define machine_arch_type	__machine_arch_type
+# else
+#  define machine_arch_type	MACH_TYPE_SMDK2440
+# endif
+# define machine_is_smdk2440()	(machine_arch_type == MACH_TYPE_SMDK2440)
+#else
+# define machine_is_smdk2440()	(0)
 #endif
 
 #ifdef CONFIG_ARCH_CEIVA
