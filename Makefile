@@ -4,7 +4,11 @@ SUBLEVEL =
 EXTRAVERSION = -rc2
 NAME =
 
-# *DOCUMENTATION*
+#export PATH=/opt/eldk-5.5.3/armv4t/sysroots/i686-eldk-linux/usr/bin:/opt/armv4t/sysroots/i686-eldk-linux/usr/bin/arm-linux-gnueabi:$PATH
+#export CROSS_COMPILE=arm-linux-gnueabi-
+#export ARCH=armv4t
+
+#*DOCUMENTATION*
 # To see a list of typical targets execute "make help"
 # More info can be located in ./README
 # Comments in this file are targeted only to the developer, do not

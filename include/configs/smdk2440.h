@@ -21,14 +21,14 @@
 #define CONFIG_S3C2440		/* specifically a SAMSUNG S3C2440 SoC */
 #define CONFIG_SMDK2440		/* on a SAMSUNG SMDK2440 Board */
 
-#define CONFIG_SYS_TEXT_BASE	0x30038000
+#define CONFIG_SYS_TEXT_BASE	0x33038000
 
 #define CONFIG_SYS_GENERIC_BOARD
 
 #define CONFIG_SYS_ARM_CACHE_WRITETHROUGH
 
 /* input clock of PLL (the SMDK2440 has 12MHz input clock) */
-#define CONFIG_SYS_CLK_FREQ	12000000
+#define CONFIG_SYS_CLK_FREQ	16934400
 
 #define CONFIG_CMDLINE_TAG	/* enable passing of ATAGs */
 #define CONFIG_SETUP_MEMORY_TAGS

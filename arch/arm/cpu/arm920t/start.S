@@ -80,10 +80,10 @@ copyex:
 	str	r1, [r0]
 # endif
 
-	/* FCLK:HCLK:PCLK = 1:2:4 */
+	/* FCLK:HCLK:PCLK = 1:4:8 */
 	/* default FCLK is 120 MHz ! */
 	ldr	r0, =CLKDIVN
-	mov	r1, #3
+	mov	r1, #5
 	str	r1, [r0]
 #endif	/* CONFIG_S3C24X0 */
 
@@ -95,6 +95,15 @@ copyex:
 	bl	cpu_init_crit
 #endif
 
+#define GPBCON  0x56000010
+#define GPBDAT  0x56000014
+
+        ldr     r0, =GPBCON
+        ldr     r1, =0x15400
+        str     r1,[r0]
+        ldr     r0, =GPBDAT
+        ldr     r1, =0x1a0
+        str     r1,[r0]
 	bl	_main
 
 /*------------------------------------------------------------------------------*/

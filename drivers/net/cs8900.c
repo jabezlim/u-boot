@@ -133,7 +133,14 @@ void cs8900_get_enetaddr(struct eth_device *dev)
 			dev->enetaddr[i * 2] = Addr & 0xFF;
 			dev->enetaddr[i * 2 + 1] = Addr >> 8;
 		}
-	}
+	} else {
+            dev->enetaddr[0] = 0x00;
+            dev->enetaddr[1] = 0x03;
+            dev->enetaddr[2] = 0x99;
+            dev->enetaddr[3] = 0x00;
+            dev->enetaddr[4] = 0x00;
+            dev->enetaddr[5] = 0x01;
+        }
 }
 
 void cs8900_halt(struct eth_device *dev)
